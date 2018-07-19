@@ -1,9 +1,11 @@
 package com.example.wajahat.fragmentandadapter;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class ItemBaseAdapter extends BaseAdapter {
         String[] data={"Wajahat","Hussain"};
@@ -25,9 +27,13 @@ public class ItemBaseAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
             if(convertView ==null){
-                TextView textView=new TextView(parent.getContext());
-                textView.setText(data[position]);
-                return textView;
+                Context context=parent.getContext();
+                LinearLayout linearLayout = new LinearLayout(context);
+                linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+                Button button=new Button(context);
+                button.setText(data[position]);
+                linearLayout.addView(button);
+                return linearLayout;
             }
             else
                 return convertView;
