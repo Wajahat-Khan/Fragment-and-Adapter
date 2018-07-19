@@ -5,10 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 public class ItemBaseAdapter extends BaseAdapter {
-        String[] data={"Wajahat","Hussain"};
+        String[] data={"Chicken Burgers","Beef Burgers", "Fish Burgers"};
     @Override
     public int getCount() {
         return data.length;
@@ -28,14 +27,19 @@ public class ItemBaseAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
             if(convertView ==null){
                 Context context=parent.getContext();
-                LinearLayout linearLayout = new LinearLayout(context);
-                linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+               // LinearLayout linearLayout = new LinearLayout(context);
+               // linearLayout.setOrientation(LinearLayout.VERTICAL);
                 Button button=new Button(context);
                 button.setText(data[position]);
-                linearLayout.addView(button);
-                return linearLayout;
+                View root= (View) button;
+                //ImageView imageView = new ImageView(context);
+                //imageView.setImageResource(R.drawable.burger1);
+
+                //linearLayout.addView(button);
+                //linearLayout.addView(imageView);
+                return root;
             }
-            else
-                return convertView;
+           else
+               return convertView;
     }
 }

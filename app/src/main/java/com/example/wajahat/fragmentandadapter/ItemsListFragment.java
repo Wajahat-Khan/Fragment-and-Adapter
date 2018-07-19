@@ -16,7 +16,6 @@ public class ItemsListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
         View list=inflater.inflate(R.layout.items_list,container,false);
         ListView l= (ListView) list.findViewById(R.id.listy);
-
             ItemBaseAdapter itemBaseAdapter = new ItemBaseAdapter();
             l.setAdapter(itemBaseAdapter);
             return list;
