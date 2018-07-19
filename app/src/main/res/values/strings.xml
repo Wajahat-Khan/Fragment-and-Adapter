@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Fragment and Adapter</string>
+    <string-array name="Items">
+        <item>Chicken Burgers</item>
+        <item>Beef Burgers</item>
+        <item>Special Burgers</item>
+        <item>Deals</item>
+    </string-array>
 </resources>
