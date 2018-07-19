@@ -13,6 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
         ItemsListFragment itemsListFragment=new ItemsListFragment();
         FragmentManager fragmentManager=getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.sc_items,itemsListFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.left_frame,itemsListFragment).commit();
     }
 }
