@@ -1,6 +1,7 @@
 package com.example.wajahat.fragmentandadapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -26,18 +27,12 @@ public class ItemBaseAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
             if(convertView ==null){
-                Context context=parent.getContext();
-               // LinearLayout linearLayout = new LinearLayout(context);
-               // linearLayout.setOrientation(LinearLayout.VERTICAL);
-                Button button=new Button(context);
+                Context context = parent.getContext();
+                LayoutInflater layoutInflater=LayoutInflater.from(context);
+                View v= layoutInflater.inflate(R.layout.specific_list,parent,false);
+                Button button=(Button) v.findViewById(R.id.specific_button);
                 button.setText(data[position]);
-                View root= (View) button;
-                //ImageView imageView = new ImageView(context);
-                //imageView.setImageResource(R.drawable.burger1);
-
-                //linearLayout.addView(button);
-                //linearLayout.addView(imageView);
-                return root;
+                return button;
             }
            else
                return convertView;
